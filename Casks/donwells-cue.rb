@@ -3,6 +3,7 @@ cask "donwells-cue" do
   sha256 "11b9947a3d0e6e4b78a487f5913782a23e0dda50e03de1fbe00b0da41b8fe117"
 
   url "https://github.com/donwellsav/dwcue/releases/download/v#{version}/DonWells-Cue-#{version}-arm64.dmg"
+
   name "DonWells Cue"
   desc "Audio cue playback application for live sound operators"
   homepage "https://github.com/donwellsav/dwcue"
@@ -12,8 +13,7 @@ cask "donwells-cue" do
     strategy :github_latest
   end
 
-  # minimumSystemVersion in the app's Info.plist is 13.3; only Apple Silicon
-  # DMGs are published so far (no x64 asset on recent releases).
+  # minimumSystemVersion in the app's Info.plist is 13.3.
   depends_on macos: :ventura
   depends_on arch: :arm64
 
