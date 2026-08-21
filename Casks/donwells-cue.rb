@@ -14,7 +14,7 @@ cask "donwells-cue" do
 
   # minimumSystemVersion in the app's Info.plist is 13.3; only Apple Silicon
   # DMGs are published so far (no x64 asset on recent releases).
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
   depends_on arch: :arm64
 
   app "DonWells Cue.app"
