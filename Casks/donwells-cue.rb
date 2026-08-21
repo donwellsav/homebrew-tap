@@ -1,6 +1,6 @@
 cask "donwells-cue" do
   version "2.5.21"
-  sha256 "11b9947a3d0e6e4b78a487f5913782a23e0dda50e03de1fbe00b0da41b8fe117"
+  sha256 "2d0805317d63c1545fbc3c82fc46e6353deced5e128a190a35ea5477f9c88954"
 
   url "https://github.com/donwellsav/dwcue/releases/download/v#{version}/DonWells-Cue-#{version}-arm64.dmg"
 
