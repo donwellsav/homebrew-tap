@@ -1,9 +1,9 @@
 cask "donwells-cue" do
-  version "2.5.22"
+  version "2.5.23"
   arch arm: "arm64", intel: "x64"
 
-  sha256 arm:   "bf4ba6b3c4a61a778843beea3118cf8d2b88398baf645ac374145288a6868c5f",
-         intel: "036ae4a94c84d30b723a62e7e8b415f6ae5b795441c92c9b3564fe7ed6858282"
+  sha256 arm:   "b5e469154f763641b2eee6a0aef833dc07e4c3c7b1b2f41818ecd63cebb18651",
+         intel: "3544a012596e67e4fe5860eaa078a66c1c00f5dc5fa7ec97db2aacbbb95f60bb"
 
   url "https://github.com/donwellsav/dwcue/releases/download/v#{version}/DonWells-Cue-#{version}-#{arch}.dmg"
 
@@ -29,18 +29,7 @@ cask "donwells-cue" do
   ]
 
   caveats <<~EOS
-    DonWells Cue is currently unsigned and not notarized (see SIGNING.md in the
-    source repo). On first launch macOS shows "Apple could not verify DonWells
-    Cue is free of malware". To get past it once:
-
-      1. Click "Done" on the warning dialog.
-      2. Open System Settings → Privacy & Security.
-      3. Scroll down and click "Open Anyway" next to DonWells Cue.
-      4. Click "Open Anyway" in the confirmation and approve with Touch ID
-         or your password.
-
-    Terminal alternative: xattr -dr com.apple.quarantine "/Applications/DonWells Cue.app"
-
-    Illustrated guide: https://dwcue.com/#download
+    DonWells Cue is signed with an Apple Developer ID and notarized by Apple,
+    so it opens normally on first launch — no Gatekeeper warning, no extra steps.
   EOS
 end
