@@ -1,8 +1,11 @@
 cask "donwells-cue" do
-  version "2.5.21"
-  sha256 "2d0805317d63c1545fbc3c82fc46e6353deced5e128a190a35ea5477f9c88954"
+  version "2.5.22"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://github.com/donwellsav/dwcue/releases/download/v#{version}/DonWells-Cue-#{version}-arm64.dmg"
+  sha256 arm:   "bf4ba6b3c4a61a778843beea3118cf8d2b88398baf645ac374145288a6868c5f",
+         intel: "036ae4a94c84d30b723a62e7e8b415f6ae5b795441c92c9b3564fe7ed6858282"
+
+  url "https://github.com/donwellsav/dwcue/releases/download/v#{version}/DonWells-Cue-#{version}-#{arch}.dmg"
 
   name "DonWells Cue"
   desc "Audio cue playback application for live sound operators"
@@ -15,7 +18,6 @@ cask "donwells-cue" do
 
   # minimumSystemVersion in the app's Info.plist is 13.3.
   depends_on macos: :ventura
-  depends_on arch: :arm64
 
   app "DonWells Cue.app"
 
@@ -28,9 +30,17 @@ cask "donwells-cue" do
 
   caveats <<~EOS
     DonWells Cue is currently unsigned and not notarized (see SIGNING.md in the
-    source repo). If Gatekeeper blocks the first launch with "damaged" or
-    "cannot be opened", run:
+    source repo). On first launch macOS shows "Apple could not verify DonWells
+    Cue is free of malware". To get past it once:
 
-      xattr -dr com.apple.quarantine "/Applications/DonWells Cue.app"
+      1. Click "Done" on the warning dialog.
+      2. Open System Settings → Privacy & Security.
+      3. Scroll down and click "Open Anyway" next to DonWells Cue.
+      4. Click "Open Anyway" in the confirmation and approve with Touch ID
+         or your password.
+
+    Terminal alternative: xattr -dr com.apple.quarantine "/Applications/DonWells Cue.app"
+
+    Illustrated guide: https://dwcue.com/#download
   EOS
 end
