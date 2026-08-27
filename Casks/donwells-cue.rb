@@ -1,9 +1,9 @@
 cask "donwells-cue" do
-  version "2.6.8"
+  version "2.6.9"
   arch arm: "arm64", intel: "x64"
 
-  sha256 arm:   "329c707886917c78714a50160b67ef70552d11e1c7f5946b0d8a69dbb7153db8",
-         intel: "01e6c88d09f3bd3e8f727a15f6fde2c434b9b85e61b47eb3d012bc5f4e4b0e5e"
+  sha256 arm:   "a1570a025c7b170482dadd2341bfe92067403c718a434aa9f5ed180a7d2b0856",
+         intel: "20d50166cb02e52fa799d0c939caf6fa4ae10911e8b28ff6384b2bb3c5340261"
 
   url "https://github.com/donwellsav/dwcue/releases/download/v#{version}/DonWells-Cue-#{version}-#{arch}.dmg"
 
